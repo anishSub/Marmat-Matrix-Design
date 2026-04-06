@@ -5,7 +5,7 @@ export default function SideNav() {
     const location = useLocation();
 
     const getLinkClass = (path) => {
-        return location.pathname === path
+        return location.pathname === path 
             ? "bg-[#353535] text-white font-bold border-l-4 border-white py-4 px-6 flex items-center space-x-4 transition-none"
             : "text-neutral-500 py-4 px-6 flex items-center space-x-4 hover:bg-[#1B1B1B] hover:text-white transition-none";
     };
@@ -23,7 +23,7 @@ export default function SideNav() {
                     </div>
                 </div>
             </div>
-
+            
             <nav className="flex-1">
                 <Link to="/dashboard" className={getLinkClass('/dashboard')}>
                     <span className="material-symbols-outlined">person</span>

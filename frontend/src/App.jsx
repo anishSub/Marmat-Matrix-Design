@@ -5,6 +5,7 @@ import DashboardLayout from './layouts/DashboardLayout';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
 import Parts from './pages/Parts';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
@@ -35,6 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
+            <Route path="about" element={<AboutUs />} />
             <Route path="parts" element={<Parts />} />
             <Route path="parts/:id" element={<ProductDetails />} />
             <Route path="cart" element={<Cart />} />
@@ -42,10 +44,10 @@ function App() {
             <Route path="service" element={<ServiceBooking />} />
             <Route path="diagnose" element={<Diagnose />} />
           </Route>
-
+          
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
+          
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/config" element={<Config />} />
@@ -53,7 +55,7 @@ function App() {
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/health" element={<Health />} />
           </Route>
-
+          
           <Route path="/staff/pos" element={<StaffPos />} />
           <Route path="/staff/customers" element={<StaffCustomers />} />
           <Route path="/staff/reports" element={<StaffReports />} />

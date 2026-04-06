@@ -43,7 +43,7 @@ export default function Health() {
                         </div>
                     </div>
                 </section>
-
+                
                 <section className="grid grid-cols-2 md:grid-cols-4 gap-6">
                     {['TELEMETRY PULL', 'SYSTEM RECAL', 'MAINTENANCE LOGS', 'STATION DISPATCH'].map((cmd, i) => (
                         <div key={i} className="bg-white p-6 flex flex-col justify-between group hover:bg-neutral-950 hover:text-white transition-colors duration-150 cursor-pointer border-l border-neutral-300">

@@ -7,7 +7,7 @@ export default function Diagnose() {
                 <h1 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-white uppercase leading-none">Diagnose<br/>Problem</h1>
                 <p className="mt-4 font-label text-xs tracking-[0.2em] text-outline uppercase">System Diagnostics / Kinetic Precision v4.02</p>
             </div>
-
+            
             <form className="space-y-24">
                 <section>
                     <div className="flex justify-between items-end mb-8">
@@ -17,7 +17,7 @@ export default function Diagnose() {
                         <textarea className="w-full bg-transparent border-none focus:ring-0 p-6 font-mono text-sm leading-relaxed text-primary placeholder:text-surface-variant min-h-[200px] resize-none" placeholder="INPUT DETAILED SYMPTOMS HERE... [HOW] [WHEN] [FREQUENCE]"></textarea>
                     </div>
                 </section>
-
+                
                 <div className="pt-12 border-t border-outline-variant/30">
                     <button className="w-full bg-primary text-on-primary py-8 flex items-center justify-center gap-6 hover:bg-primary-container transition-all duration-100 group" type="submit">
                         <span className="font-headline text-2xl font-black uppercase tracking-tighter">Initiate System Scan & Submit</span>

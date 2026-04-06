@@ -62,7 +62,7 @@ export default function Checkout() {
                                     <h2 className="text-xl font-headline font-bold tracking-tight text-white">01 // SHIPPING DETAILS</h2>
                                     <span className="text-[10px] font-label tracking-[0.2em] text-primary">STEP 1/2</span>
                                 </div>
-
+                                
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-1">
                                         <label className="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant">FULL NAME</label>
@@ -164,7 +164,7 @@ export default function Checkout() {
                                 ))}
                             </div>
                         </header>
-
+                        
                         <div className="space-y-4 border-t border-outline-variant pt-8">
                             <div className="flex justify-between items-center text-[11px] font-label tracking-widest text-on-surface-variant">
                                 <span>SUBTOTAL</span>
@@ -178,7 +178,7 @@ export default function Checkout() {
                                 <span>EST. TAX (6%)</span>
                                 <span>${taxes.toFixed(2)}</span>
                             </div>
-
+                            
                             <div className="pt-6 mt-6 border-t-2 border-primary flex justify-between items-end">
                                 <div>
                                     <span className="text-[10px] font-label font-bold text-on-surface-variant tracking-[0.3em] uppercase">TOTAL PAYABLE</span>

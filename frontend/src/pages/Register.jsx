@@ -27,14 +27,14 @@ export default function Register() {
                     <h1 className="font-headline text-4xl font-black tracking-tighter text-white leading-none">KINETIC<br/>PRECISION</h1>
                 </div>
             </section>
-
+            
             <section className="w-full md:w-1/2 h-screen overflow-y-auto bg-primary flex flex-col items-center justify-center p-8 md:p-16 relative">
                 <div className="w-full max-w-xl space-y-12">
                     <header className="space-y-4">
                         <h2 className="font-headline text-5xl font-extrabold tracking-tighter text-on-primary leading-tight">OPERATOR<br/>ENROLLMENT</h2>
                     </header>
                     {error && <p className="text-error font-bold text-sm">{error}</p>}
-
+                    
                     <form className="space-y-10" onSubmit={handleSubmit}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="group">

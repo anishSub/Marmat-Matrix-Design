@@ -65,7 +65,7 @@ namespace Backend.Controllers
 
             _context.TelemetryData.Add(telemetryData);
             await _context.SaveChangesAsync();
-
+            
             telemetryDto.Id = telemetryData.Id;
             telemetryDto.LastSync = telemetryData.LastSync;
 

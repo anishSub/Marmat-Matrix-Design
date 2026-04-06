@@ -117,9 +117,9 @@ const PosTerminal = () => {
                         <div className="mb-8 flex items-center gap-4">
                             <div className="relative flex-1">
                                 <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500">search</span>
-                                <input
-                                    className="w-full bg-surface-container-lowest border-none py-5 pl-14 pr-6 text-xs font-['Inter'] tracking-widest uppercase focus:ring-0 focus:bg-surface-container-high transition-colors text-white placeholder:text-neutral-600"
-                                    placeholder="SEARCH SYSTEM INVENTORY (PART NO, SERIAL, COMPONENT NAME)..."
+                                <input 
+                                    className="w-full bg-surface-container-lowest border-none py-5 pl-14 pr-6 text-xs font-['Inter'] tracking-widest uppercase focus:ring-0 focus:bg-surface-container-high transition-colors text-white placeholder:text-neutral-600" 
+                                    placeholder="SEARCH SYSTEM INVENTORY (PART NO, SERIAL, COMPONENT NAME)..." 
                                     type="text"
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
