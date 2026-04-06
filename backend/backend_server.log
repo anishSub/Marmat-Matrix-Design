@@ -1,55 +1,23 @@
 Using launch settings from /app/backend/Properties/launchSettings.json...
 Building...
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (16ms) [Parameters=[@normalizedName='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      Executed DbCommand (19ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
       SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
       FROM "AspNetRoles" AS "a"
-      WHERE "a"."NormalizedName" = @normalizedName
+      WHERE "a"."NormalizedName" = @__normalizedName_0
       LIMIT 1
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
       SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
       FROM "AspNetRoles" AS "a"
-      WHERE "a"."NormalizedName" = @normalizedName
+      WHERE "a"."NormalizedName" = @__normalizedName_0
       LIMIT 1
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (Size = 5), @p3='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
-      INSERT INTO "AspNetRoles" ("Id", "ConcurrencyStamp", "Name", "NormalizedName")
-      VALUES (@p0, @p1, @p2, @p3);
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
+      Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 8)], CommandType='Text', CommandTimeout='30']
       SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
       FROM "AspNetRoles" AS "a"
-      WHERE "a"."NormalizedName" = @normalizedName
+      WHERE "a"."NormalizedName" = @__normalizedName_0
       LIMIT 1
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
-      SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
-      FROM "AspNetRoles" AS "a"
-      WHERE "a"."NormalizedName" = @normalizedName
-      LIMIT 1
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (Size = 5), @p3='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
-      INSERT INTO "AspNetRoles" ("Id", "ConcurrencyStamp", "Name", "NormalizedName")
-      VALUES (@p0, @p1, @p2, @p3);
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 8)], CommandType='Text', CommandTimeout='30']
-      SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
-      FROM "AspNetRoles" AS "a"
-      WHERE "a"."NormalizedName" = @normalizedName
-      LIMIT 1
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@normalizedName='?' (Size = 8)], CommandType='Text', CommandTimeout='30']
-      SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
-      FROM "AspNetRoles" AS "a"
-      WHERE "a"."NormalizedName" = @normalizedName
-      LIMIT 1
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (Size = 8), @p3='?' (Size = 8)], CommandType='Text', CommandTimeout='30']
-      INSERT INTO "AspNetRoles" ("Id", "ConcurrencyStamp", "Name", "NormalizedName")
-      VALUES (@p0, @p1, @p2, @p3);
-warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
-      No XML encryptor configured. Key {d51e263c-3e52-4102-ab74-5f6214dc301a} may be persisted to storage in unencrypted form.
 info: Microsoft.Hosting.Lifetime[14]
       Now listening on: http://localhost:5152
 info: Microsoft.Hosting.Lifetime[0]

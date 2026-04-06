@@ -16,6 +16,17 @@ import Wishlist from './pages/Wishlist';
 import ServiceBooking from './pages/ServiceBooking';
 import Diagnose from './pages/Diagnose';
 import Health from './pages/Health';
+import StaffPos from './pages/StaffPos';
+import StaffCustomers from './pages/StaffCustomers';
+import StaffReports from './pages/StaffReports';
+import ReportExtraction from './pages/ReportExtraction';
+import AdminDashboard from './pages/AdminDashboard';
+import AdminTelemetry from './pages/AdminTelemetry';
+import AdminReports from './pages/AdminReports';
+import AdminFinancials from './pages/AdminFinancials';
+import StaffManagement from './pages/StaffManagement';
+import StaffApproval from './pages/StaffApproval';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -42,6 +53,20 @@ function App() {
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/health" element={<Health />} />
           </Route>
+
+          <Route path="/staff/pos" element={<StaffPos />} />
+          <Route path="/staff/customers" element={<StaffCustomers />} />
+          <Route path="/staff/reports" element={<StaffReports />} />
+          <Route path="/staff/report-extraction" element={<ReportExtraction />} />
+
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/telemetry" element={<AdminTelemetry />} />
+          <Route path="/admin/reports" element={<AdminReports />} />
+          <Route path="/admin/financials" element={<AdminFinancials />} />
+          <Route path="/admin/staff" element={<StaffManagement />} />
+          <Route path="/admin/approval" element={<StaffApproval />} />
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

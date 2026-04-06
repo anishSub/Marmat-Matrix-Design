@@ -20,7 +20,7 @@ namespace Backend.Controllers
         }
 
         [HttpGet("Telemetry/{vehicleId}")]
-        public async Task<ActionResult<TelemetryData>> GetTelemetry(int vehicleId)
+        public async Task<ActionResult<Backend.DTOs.TelemetryDataDto>> GetTelemetry(int vehicleId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var role = User.FindFirstValue(ClaimTypes.Role);
@@ -36,19 +36,40 @@ namespace Backend.Controllers
 
             if (telemetry == null)
             {
-                return new TelemetryData { VehicleId = vehicleId, HealthScore = 94, Status = "CRITICAL: CYLINDER 4 THERMAL TOLERANCE EXCEEDED BY 0.04%", LastSync = DateTime.UtcNow };
+                return Ok(new Backend.DTOs.TelemetryDataDto { VehicleId = vehicleId, HealthScore = 94, Status = "CRITICAL: CYLINDER 4 THERMAL TOLERANCE EXCEEDED BY 0.04%", LastSync = DateTime.UtcNow });
             }
-            return telemetry;
+
+            var dto = new Backend.DTOs.TelemetryDataDto
+            {
+                Id = telemetry.Id,
+                VehicleId = telemetry.VehicleId,
+                HealthScore = telemetry.HealthScore,
+                Status = telemetry.Status,
+                LastSync = telemetry.LastSync
+            };
+
+            return Ok(dto);
         }
 
         [HttpPost("Telemetry")]
         [Authorize(Roles = "Admin,Staff")]
-        public async Task<ActionResult<TelemetryData>> PostTelemetry(TelemetryData telemetryData)
+        public async Task<ActionResult<Backend.DTOs.TelemetryDataDto>> PostTelemetry(Backend.DTOs.TelemetryDataDto telemetryDto)
         {
-            telemetryData.LastSync = DateTime.UtcNow;
+            var telemetryData = new TelemetryData
+            {
+                VehicleId = telemetryDto.VehicleId,
+                HealthScore = telemetryDto.HealthScore,
+                Status = telemetryDto.Status,
+                LastSync = DateTime.UtcNow
+            };
+
             _context.TelemetryData.Add(telemetryData);
             await _context.SaveChangesAsync();
-            return CreatedAtAction("GetTelemetry", new { vehicleId = telemetryData.VehicleId }, telemetryData);
+
+            telemetryDto.Id = telemetryData.Id;
+            telemetryDto.LastSync = telemetryData.LastSync;
+
+            return CreatedAtAction("GetTelemetry", new { vehicleId = telemetryData.VehicleId }, telemetryDto);
         }
     }
 }

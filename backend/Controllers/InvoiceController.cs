@@ -20,42 +20,72 @@ namespace Backend.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
+        public async Task<ActionResult<IEnumerable<Backend.DTOs.OrderDto>>> GetOrders()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var role = User.FindFirstValue(ClaimTypes.Role);
 
-            if (role == "Admin" || role == "Staff")
+            IQueryable<Order> query = _context.Orders.Include(o => o.OrderItems);
+
+            if (role != "Admin" && role != "Staff")
             {
-                return await _context.Orders.Include(o => o.OrderItems).ThenInclude(oi => oi.Part).ToListAsync();
+                query = query.Where(o => o.UserId == userId);
             }
 
-            return await _context.Orders
-                .Where(o => o.UserId == userId)
-                .Include(o => o.OrderItems)
-                .ThenInclude(oi => oi.Part)
-                .ToListAsync();
+            var orders = await query.ToListAsync();
+            var dtos = orders.Select(o => new Backend.DTOs.OrderDto
+            {
+                Id = o.Id,
+                UserId = o.UserId,
+                TotalAmount = o.TotalAmount,
+                OrderDate = o.OrderDate,
+                OrderItems = o.OrderItems.Select(oi => new Backend.DTOs.OrderItemDto
+                {
+                    Id = oi.Id,
+                    OrderId = oi.OrderId,
+                    PartId = oi.PartId,
+                    Quantity = oi.Quantity,
+                    UnitPrice = oi.UnitPrice
+                }).ToList()
+            }).ToList();
+
+            return Ok(dtos);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Order>> GetOrder(int id)
+        public async Task<ActionResult<Backend.DTOs.OrderDto>> GetOrder(int id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var role = User.FindFirstValue(ClaimTypes.Role);
 
             var order = await _context.Orders
                 .Include(o => o.OrderItems)
-                .ThenInclude(oi => oi.Part)
                 .FirstOrDefaultAsync(o => o.Id == id);
 
             if (order == null) return NotFound();
             if (role != "Admin" && role != "Staff" && order.UserId != userId) return Forbid();
 
-            return order;
+            var dto = new Backend.DTOs.OrderDto
+            {
+                Id = order.Id,
+                UserId = order.UserId,
+                TotalAmount = order.TotalAmount,
+                OrderDate = order.OrderDate,
+                OrderItems = order.OrderItems.Select(oi => new Backend.DTOs.OrderItemDto
+                {
+                    Id = oi.Id,
+                    OrderId = oi.OrderId,
+                    PartId = oi.PartId,
+                    Quantity = oi.Quantity,
+                    UnitPrice = oi.UnitPrice
+                }).ToList()
+            };
+
+            return Ok(dto);
         }
 
         [HttpPost("Checkout")]
-        public async Task<ActionResult<Order>> Checkout([FromBody] CheckoutRequest request)
+        public async Task<ActionResult<Backend.DTOs.OrderDto>> Checkout([FromBody] CheckoutRequest request)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (string.IsNullOrEmpty(userId)) return Unauthorized();
@@ -74,7 +104,24 @@ namespace Backend.Controllers
 
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetOrder), new { id = order.Id }, order);
+
+            var dto = new Backend.DTOs.OrderDto
+            {
+                Id = order.Id,
+                UserId = order.UserId,
+                TotalAmount = order.TotalAmount,
+                OrderDate = order.OrderDate,
+                OrderItems = order.OrderItems.Select(oi => new Backend.DTOs.OrderItemDto
+                {
+                    Id = oi.Id,
+                    OrderId = oi.OrderId,
+                    PartId = oi.PartId,
+                    Quantity = oi.Quantity,
+                    UnitPrice = oi.UnitPrice
+                }).ToList()
+            };
+
+            return CreatedAtAction(nameof(GetOrder), new { id = order.Id }, dto);
         }
     }
 
