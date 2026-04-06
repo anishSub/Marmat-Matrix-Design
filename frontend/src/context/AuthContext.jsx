@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
         const token = localStorage.getItem('token');
         const role = localStorage.getItem('role');
         const fullName = localStorage.getItem('fullName');
-        
+
         if (token) {
             setUser({ token, role, fullName });
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;

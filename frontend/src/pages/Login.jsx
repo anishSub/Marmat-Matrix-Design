@@ -38,7 +38,7 @@ export default function Login() {
                 </div>
                 <div className="machined-grain absolute inset-0 z-20"></div>
             </section>
-            
+
             <section className="w-full md:w-1/2 bg-white flex items-center justify-center p-8 md:p-24 relative overflow-hidden">
                 <div className="w-full max-w-md relative z-10">
                     <div className="mb-12">
@@ -46,20 +46,20 @@ export default function Login() {
                         <p className="text-neutral-500 text-sm font-label uppercase tracking-wider">Authentication Protocol Required</p>
                     </div>
                     {error && <p className="text-error font-bold mb-4 text-sm">{error}</p>}
-                    
+
                     <form className="space-y-6" onSubmit={handleSubmit}>
                         <div className="space-y-2">
                             <label className="block text-[10px] font-bold text-black uppercase tracking-widest">Email Access</label>
-                            <input 
-                                className="w-full px-4 py-4 bg-neutral-50 border-2 border-black text-black placeholder:text-neutral-300 focus:outline-none" 
-                                type="email" value={email} onChange={(e) => setEmail(e.target.value)} required 
+                            <input
+                                className="w-full px-4 py-4 bg-neutral-50 border-2 border-black text-black placeholder:text-neutral-300 focus:outline-none"
+                                type="email" value={email} onChange={(e) => setEmail(e.target.value)} required
                             />
                         </div>
                         <div className="space-y-2">
                             <label className="block text-[10px] font-bold text-black uppercase tracking-widest">Auth Key</label>
-                            <input 
-                                className="w-full px-4 py-4 bg-neutral-50 border-2 border-black text-black placeholder:text-neutral-300 focus:outline-none" 
-                                type="password" value={password} onChange={(e) => setPassword(e.target.value)} required 
+                            <input
+                                className="w-full px-4 py-4 bg-neutral-50 border-2 border-black text-black placeholder:text-neutral-300 focus:outline-none"
+                                type="password" value={password} onChange={(e) => setPassword(e.target.value)} required
                             />
                         </div>
                         <div className="pt-4">

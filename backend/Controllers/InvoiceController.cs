@@ -26,7 +26,7 @@ namespace Backend.Controllers
             var role = User.FindFirstValue(ClaimTypes.Role);
 
             IQueryable<Order> query = _context.Orders.Include(o => o.OrderItems);
-            
+
             if (role != "Admin" && role != "Staff")
             {
                 query = query.Where(o => o.UserId == userId);

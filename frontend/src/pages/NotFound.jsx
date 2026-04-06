@@ -5,7 +5,7 @@ const NotFound = () => {
     return (
         <div className="bg-[#131313] text-[#e2e2e2] min-h-screen flex flex-col overflow-hidden font-body selection:bg-primary selection:text-on-primary relative">
             <div className="fixed inset-0 z-0 opacity-[0.03] pointer-events-none" style={{backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")'}}></div>
-            
+
             {/* Structural Depth Layers */}
             <div className="fixed top-0 left-0 w-full h-16 bg-gradient-to-b from-[#0e0e0e] to-transparent opacity-50 pointer-events-none z-0"></div>
             <div className="fixed bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0e0e0e] to-transparent opacity-50 pointer-events-none z-0"></div>
@@ -35,10 +35,10 @@ const NotFound = () => {
                     <div className="relative w-full max-w-md my-12 group">
                         <div className="absolute inset-0 bg-white opacity-5 blur-3xl group-hover:opacity-10 transition-opacity"></div>
                         <div className="relative bg-[#0e0e0e] overflow-hidden border-none p-1">
-                            <img 
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCab_bGVIMBt1pzaba5HGO46-HHxWEIcZBS4aG_trIg7o_eEor-FdDbdcH7kW0h3Ku2dpDMNjTd0-hrOaqdu3wCS_kBQLaxpaC74cjYUJLZoovz2wDxEL0rgLOyn-X4eu8Y3I2HnrpBd2EjkhIR26R8Ptxm6gNIVi2y14RMm9R2f9Yv6UmH5n5UNNC9Iwb-frQ1QSnrZNDZwRiGBq24FfvRN9Xk8uXv0Ot0PFMTwX-GD5Stiuvla-CgAqVlNCqaxwu5ptlCg3GLGJE" 
-                                alt="disconnected mechanical gear" 
-                                className="w-full aspect-square object-cover grayscale brightness-50 contrast-125" 
+                            <img
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCab_bGVIMBt1pzaba5HGO46-HHxWEIcZBS4aG_trIg7o_eEor-FdDbdcH7kW0h3Ku2dpDMNjTd0-hrOaqdu3wCS_kBQLaxpaC74cjYUJLZoovz2wDxEL0rgLOyn-X4eu8Y3I2HnrpBd2EjkhIR26R8Ptxm6gNIVi2y14RMm9R2f9Yv6UmH5n5UNNC9Iwb-frQ1QSnrZNDZwRiGBq24FfvRN9Xk8uXv0Ot0PFMTwX-GD5Stiuvla-CgAqVlNCqaxwu5ptlCg3GLGJE"
+                                alt="disconnected mechanical gear"
+                                className="w-full aspect-square object-cover grayscale brightness-50 contrast-125"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#131313] via-transparent to-transparent"></div>
                         </div>
@@ -70,7 +70,7 @@ const NotFound = () => {
                             <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[#5d5f5f] -translate-x-3 -translate-y-3"></div>
                             <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[#5d5f5f] translate-x-3 translate-y-3"></div>
                         </Link>
-                        
+
                         <div className="flex items-center gap-4 text-[#919191] font-['Inter'] text-[10px] tracking-widest uppercase">
                             <span className="opacity-50">MANUAL_OVERRIDE:</span>
                             <Link to="/diagnose" className="hover:text-white transition-colors">REPORT_GLITCH</Link>

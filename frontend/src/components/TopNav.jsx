@@ -16,7 +16,7 @@ export default function TopNav({ isDashboard }) {
             <Link to="/" className="text-2xl font-black tracking-tighter text-white font-['Space_Grotesk'] uppercase">
                 KINETIC PRECISION
             </Link>
-            
+
             {!isDashboard && (
                 <div className="hidden md:flex gap-8 items-center h-full">
                     <Link to="/" className="font-['Space_Grotesk'] uppercase tracking-tighter text-neutral-500 hover:text-white transition-colors duration-100 text-sm font-bold">HOME</Link>

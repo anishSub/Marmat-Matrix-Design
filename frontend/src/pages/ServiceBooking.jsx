@@ -29,7 +29,7 @@ export default function ServiceBooking() {
                     </button>
                 </div>
             </section>
-            
+
             <section className="w-full md:w-1/2 bg-surface-container-low p-8 lg:p-12 relative">
                 <header className="mb-12">
                     <div className="text-xs font-label uppercase tracking-[0.3em] text-outline mb-2">Inventory Out-of-Stock</div>

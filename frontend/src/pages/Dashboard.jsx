@@ -26,7 +26,7 @@ export default function Dashboard() {
                     EDIT PROFILE <span className="material-symbols-outlined text-sm">edit</span>
                 </Link>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="col-span-1 md:col-span-2 bg-surface-container-low p-8 border-l-2 border-primary">
                     <div className="flex justify-between items-start mb-8">

@@ -67,8 +67,8 @@ const StaffCustomers = () => {
     const [selectedCustomer, setSelectedCustomer] = useState(mockCustomers[0]);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-    const filteredCustomers = mockCustomers.filter(c => 
-        c.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    const filteredCustomers = mockCustomers.filter(c =>
+        c.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         c.id.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
@@ -141,9 +141,9 @@ const StaffCustomers = () => {
                             <div className="flex flex-col md:flex-row gap-4 items-center">
                                 <div className="relative flex-1 w-full">
                                     <span className="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-neutral-500">search</span>
-                                    <input 
-                                        className="w-full bg-surface-container-lowest border-0 text-white placeholder-neutral-600 pl-12 py-4 font-headline text-sm tracking-widest focus:ring-1 focus:ring-primary" 
-                                        placeholder="SEARCH_DATABASE_BY_NAME_VIN_OR_ID" 
+                                    <input
+                                        className="w-full bg-surface-container-lowest border-0 text-white placeholder-neutral-600 pl-12 py-4 font-headline text-sm tracking-widest focus:ring-1 focus:ring-primary"
+                                        placeholder="SEARCH_DATABASE_BY_NAME_VIN_OR_ID"
                                         type="text"
                                         value={searchTerm}
                                         onChange={(e) => setSearchTerm(e.target.value)}

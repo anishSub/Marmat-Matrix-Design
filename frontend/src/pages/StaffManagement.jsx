@@ -68,7 +68,7 @@ const StaffManagement = () => {
                                 <h1 className="font-headline text-5xl font-bold tracking-tighter uppercase text-primary">Personnel_Registry</h1>
                                 <p className="font-body text-neutral-500 mt-2 text-sm tracking-wide">ACTIVE_RESOURCES / TOTAL_COUNT: 48</p>
                             </div>
-                            
+
                             {/* Staff Table/List */}
                             <div className="flex flex-col gap-1">
                                 {/* Table Header */}
@@ -79,7 +79,7 @@ const StaffManagement = () => {
                                     <div className="col-span-3 font-['Inter'] uppercase tracking-widest text-[9px] text-neutral-500">QUARTERLY_SALES_VOL</div>
                                     <div className="col-span-1 font-['Inter'] uppercase tracking-widest text-[9px] text-neutral-500">STATUS</div>
                                 </div>
-                                
+
                                 {/* Staff Rows */}
                                 {[
                                     { id: "#0921", name: "KANE_VESTERRA", email: "k.vesterra@kinetic.io", role: "Lead_Architect", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDe1-ALcXAdkgitCLVROFEnqSgVn7NauCdCJODWCjFCyNE3LViTAljFjjBSVVdCErwcQq-Sv5rkHcKmCFXys3huiIz_kDJsxqwx4UHxyp5xcgyEH1xo8oaFkO_71asuF5nKf_co8qe1-oVPhpFlbojVkpKZALuV1K2vfVzXjHoO7tyvdGmqSq6wMlgAW15yHyXwsRmeD_bJSUpmcAMDvrLhkqCeUPrHeToV027rt1ABrXlxc_gvEDoIKmH8KI9qfPESyY39TH110VI", sales: "1.2M / 2.0M", pct: "60%", color: "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" },

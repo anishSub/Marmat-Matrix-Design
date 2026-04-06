@@ -69,7 +69,7 @@ const AdminTelemetry = () => {
                                 GENERATE MASTER ARCHIVE
                             </button>
                         </div>
-                        
+
                         {/* Reports Grid (Reusing ReportExtraction logic/styling) */}
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
                             <div className="bg-surface-container p-6 border-l-4 border-primary">
